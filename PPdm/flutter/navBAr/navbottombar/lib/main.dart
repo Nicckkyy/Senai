@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
-      home: NavBar(),
+      debugShowCheckedModeBanner: false, 
+      home: NavBar()
     );
   }
 }
@@ -29,17 +29,14 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   int myindex = 0; // indica o index da tela desejada
 
-  void changeindex(int newindex){
-    setState(() { // nescessário para trocar o valor de uma variavel
-      myindex = newindex; 
+  void changeindex(int newindex) {
+    setState(() {
+      // nescessário para trocar o valor de uma variavel
+      myindex = newindex;
     });
-  } 
+  }
 
-  List <Widget> screens = [
-    Tela1(),
-    Tela2(),
-    Tela3()
-  ];
+  List<Widget> screens = [Tela1(), Tela2(), Tela3()];
 
   @override
   Widget build(BuildContext context) {
@@ -47,15 +44,25 @@ class _NavBarState extends State<NavBar> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: screens.elementAt(myindex),
-        bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem> [
-          BottomNavigationBarItem(label: "Tela 1", icon: Icon(Icons.account_circle)),
-          BottomNavigationBarItem(label: "Tela 2", icon: Icon(Icons.account_circle_outlined)),
-          BottomNavigationBarItem(label: "Tela 3", icon: Icon(Icons.account_circle_sharp)),
-        ],
-        
-        currentIndex: myindex, // indica o index atual = my Index
-        onTap: changeindex, // troca o valor do index = chama a função para troca
+        bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              label: "Tela 1",
+              icon: Icon(Icons.account_circle),
+            ),
+            BottomNavigationBarItem(
+              label: "Tela 2",
+              icon: Icon(Icons.account_circle_outlined),
+            ),
+            BottomNavigationBarItem(
+              label: "Tela 3",
+              icon: Icon(Icons.account_circle_sharp),
+            ),
+          ],
 
+          currentIndex: myindex, // indica o index atual = my Index
+          onTap:
+              changeindex, // troca o valor do index = chama a função para troca
         ),
       ),
     );

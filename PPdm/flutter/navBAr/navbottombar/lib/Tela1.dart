@@ -10,20 +10,56 @@ class Tela1 extends StatefulWidget {
 class _Tela1State extends State<Tela1> {
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Stack(
-            children: [
-              Image.asset(
-                'assets/momonoke.png',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            ],
-          ),
+        body: ListView(
+          children: [
+            Column(
+              children: [
+                Container(
+                  height: screenSize.height,
+                  child: Image.asset(
+                    'assets/momonoke.png',
+                    width: double.infinity,
+                    height: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+
+                Container(
+                  height: screenSize.height,
+                  child: Image.asset(
+                    'assets/totoro.png',
+                    width: double.infinity,
+                    height: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+
+                Container(
+                  height: screenSize.height,
+                  child: Image.asset(
+                    'assets/momonoke.png',
+                    width: double.infinity,
+                    height: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+
+                Container(
+                  height: screenSize.height,
+                  child: Image.asset(
+                    'assets/totoro.png',
+                    width: double.infinity,
+                    height: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
