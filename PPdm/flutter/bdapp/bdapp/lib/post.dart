@@ -1,3 +1,4 @@
+import 'package:bdapp/delete.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,7 @@ class _PostPageState extends State<PostPage> {
 
   }
 
+// interface bunitinha
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,7 +47,10 @@ class _PostPageState extends State<PostPage> {
             children: [
               Text("Insira aqui a temperatura desejada"),
               TextField(controller: novaTemperatura),
-              ElevatedButton(onPressed: postValue, child: Text("Enviar dados"))
+              ElevatedButton(onPressed: postValue, child: Text("Enviar dados")),
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> DeletePage()));
+              }, child: Text("Ir para a pagina Delete"))
             ],
           ),
         )
