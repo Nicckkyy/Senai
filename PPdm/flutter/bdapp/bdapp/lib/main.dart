@@ -1,4 +1,5 @@
 import 'package:bdapp/post.dart';
+import 'package:bdapp/put.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -68,7 +69,11 @@ class _TelaGetState extends State<TelaGet> {
               Text("$temperatura"),
               ElevatedButton(onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => PostPage()));
-              }, child: Text("Ir para a página POST!"))
+              }, child: Text("Ir para a página POST!")),
+
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PutPage()));
+              }, child: Text("Ir para PUT!"))
             ],
           ),
         ),
